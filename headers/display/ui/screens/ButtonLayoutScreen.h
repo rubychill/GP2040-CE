@@ -136,6 +136,7 @@ class ButtonLayoutScreen : public GPScreen {
         GPButton* addButton(uint16_t startX, uint16_t startY, uint16_t sizeX, uint16_t sizeY, uint16_t strokeColor, uint16_t fillColor, int16_t inputMask = -1);
         GPSprite* addSprite(uint16_t startX, uint16_t startY, uint16_t sizeX, uint16_t sizeY);
         GPShape* addShape(uint16_t startX, uint16_t startY, uint16_t sizeX, uint16_t sizeY, uint16_t strokeColor, uint16_t fillColor);
+        GPAnimatedButton* addAnimatedButton(uint16_t startX, uint16_t startY, uint16_t sizeX, uint16_t sizeY, uint16_t inputMask, bool dirInput, uint16_t numFrames, uint16_t framerate, const unsigned char *idleFrameData, const unsigned char **frameData);
         GPWidget* pushElement(GPButtonLayout element);
         void generateHeader();
 

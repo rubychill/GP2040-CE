@@ -24,6 +24,12 @@ typedef struct {
     uint16_t angleStart;
     uint16_t angleEnd;
     uint16_t closed;
+
+    bool dirInput;
+    uint16_t numFrames;
+    uint16_t framerate;
+    const unsigned char *idleFrameData;
+    const unsigned char **frameData;
 } GPButtonParameters;
 
 typedef struct {
@@ -128,6 +134,7 @@ class LayoutManager {
         LayoutList draw6GAWDRight();
         LayoutList draw6GAWDAllButtonRight();
         LayoutList draw6GAWDAllButtonPlusRight();
+        LayoutList drawBongoCat();
     private:
         LayoutManager(){}
 

@@ -249,6 +249,19 @@ GPSprite* ButtonLayoutScreen::addSprite(uint16_t startX, uint16_t startY, uint16
     return (GPSprite*)addElement(sprite);
 }
 
+GPAnimatedButton* ButtonLayoutScreen::addAnimatedButton(uint16_t startX, uint16_t startY, uint16_t sizeX, uint16_t sizeY, uint16_t inputMask, bool dirInput, uint16_t numFrames, uint16_t framerate, const unsigned char *idleFrameData, const unsigned char **frameData) {
+    GPAnimatedButton* btn = new GPAnimatedButton(idleFrameData, frameData);
+    btn->setRenderer(getRenderer());
+    btn->setPosition(startX, startY);
+    btn->setSize(sizeX, sizeY);
+    btn->setInputMask(inputMask);
+    btn->setDirInput(dirInput);
+    btn->setNumFrames(numFrames);
+    btn->setFramerate(framerate);
+    btn->setViewport(this->getViewport());
+    return (GPAnimatedButton*)addElement(btn);
+}
+
 GPWidget* ButtonLayoutScreen::pushElement(GPButtonLayout element) {
     if (element.elementType == GP_ELEMENT_LEVER) {
         return addLever(element.parameters.x1, element.parameters.y1, element.parameters.x2, element.parameters.y2, element.parameters.stroke, element.parameters.fill, element.parameters.value);
@@ -275,6 +288,9 @@ GPWidget* ButtonLayoutScreen::pushElement(GPButtonLayout element) {
         shape->setAngleEnd(element.parameters.angleEnd);
         shape->setClosed(element.parameters.closed);
         return shape;
+    } else if (element.elementType = GP_ELEMENT_ANIMATED_BTN) {
+        GPAnimatedButton* button = addAnimatedButton(element.parameters.x1, element.parameters.y1, element.parameters.x2, element.parameters.y2, element.parameters.value, element.parameters.dirInput, element.parameters.numFrames, element.parameters.framerate, element.parameters.idleFrameData, element.parameters.frameData);
+        return button;
     }
     return NULL;
 }

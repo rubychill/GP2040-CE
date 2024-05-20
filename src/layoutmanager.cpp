@@ -115,6 +115,8 @@ LayoutManager::LayoutList LayoutManager::getLeftLayout(uint16_t index) {
             return draw6GAWDAllButtonLeft();
         case BUTTON_LAYOUT_6GAWD_ALLBUTTONPLUS_A:
             return draw6GAWDAllButtonPlusLeft();
+        case BUTTON_LAYOUT_BONGO_CAT:
+            return drawBongoCat();
         default:
             break;
     }
@@ -499,6 +501,14 @@ LayoutManager::LayoutList LayoutManager::draw6GAWDAllButtonLeft()
 LayoutManager::LayoutList LayoutManager::draw6GAWDAllButtonPlusLeft() 
 {
     return BUTTON_GROUP_6GAWD_ALLBUTTONPLUS_A;
+}
+
+LayoutManager::LayoutList LayoutManager::drawBongoCat()
+{
+    return {
+        {GP_ELEMENT_ANIMATED_BTN, {0, 0, 45, 56, 0, 0, 0xF, 0, 0, 0, 0, true, 1, 0, bongoCatLeftUp, (const unsigned char**)bongoCatLeftDown}}, 
+        {GP_ELEMENT_ANIMATED_BTN, {44, 0, 45, 56, 0, 0, 0x3FFF, 0, 0, 0, 0, false, 1, 0, bongoCatRightUp, (const unsigned char**)bongoCatRightDown}}
+    };
 }
 
 LayoutManager::LayoutList LayoutManager::drawDancepadDDRRight()

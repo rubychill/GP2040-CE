@@ -176,6 +176,7 @@ src/interfaces/i2c/ssd1306/obd_ssd1306.cpp
 src/interfaces/i2c/ssd1306/tiny_ssd1306.cpp
 src/display/ui/elements/GPWidget.cpp
 src/display/ui/elements/GPButton.cpp
+src/display/ui/elements/GPAnimatedButton.cpp
 src/display/ui/elements/GPLever.cpp
 src/display/ui/elements/GPLabel.cpp
 src/display/ui/elements/GPScreen.cpp
