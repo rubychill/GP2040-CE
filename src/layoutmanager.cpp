@@ -505,10 +505,7 @@ LayoutManager::LayoutList LayoutManager::draw6GAWDAllButtonPlusLeft()
 
 LayoutManager::LayoutList LayoutManager::drawBongoCat()
 {
-    return {
-        {GP_ELEMENT_ANIMATED_BTN, {0, 0, 45, 56, 0, 0, 0xF, 0, 0, 0, 0, true, 1, 0, bongoCatLeftUp, (const unsigned char**)bongoCatLeftDown}}, 
-        {GP_ELEMENT_ANIMATED_BTN, {44, 0, 45, 56, 0, 0, 0x3FFF, 0, 0, 0, 0, false, 1, 0, bongoCatRightUp, (const unsigned char**)bongoCatRightDown}}
-    };
+    return BUTTON_GROUP_BONGO_CAT;
 }
 
 LayoutManager::LayoutList LayoutManager::drawDancepadDDRRight()

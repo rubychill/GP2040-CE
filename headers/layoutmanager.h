@@ -26,10 +26,8 @@ typedef struct {
     uint16_t closed;
 
     bool dirInput;
-    uint16_t numFrames;
-    uint16_t framerate;
-    const unsigned char *idleFrameData;
-    const unsigned char **frameData;
+    const unsigned char *releasedSpriteData;
+    const unsigned char *pressedSpriteData;
 } GPButtonParameters;
 
 typedef struct {

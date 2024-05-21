@@ -8,7 +8,7 @@
 #include "ui/elements/GPScreen.h"
 #include "ui/elements/GPShape.h"
 #include "ui/elements/GPSprite.h"
-#include "ui/elements/GPAnimatedButton.h"
+#include "ui/elements/GPSpriteButton.h"
 
 #include "GPGFX_UI_screens.h"
 
