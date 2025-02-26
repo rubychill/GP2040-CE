@@ -16,6 +16,8 @@ class GPSpriteButton : public GPWidget {
         uint16_t _sizeY = 0;
         int16_t _inputMask = -1;
         bool _dirInput = false;
+        uint16_t _prevButtonState = 0;
+        uint8_t _prevDpadState = 0;
 
         const unsigned char *_releasedSpriteData;
         const unsigned char *_pressedSpriteData;
